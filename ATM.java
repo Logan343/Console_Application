@@ -1,5 +1,3 @@
-package zoho1;
-
 import java.util.Scanner;
 
 class userdata {
@@ -22,15 +20,13 @@ class ATM {
     static int total = 3000;
     static userdata u[] = new userdata[4];
 
-    // <---------------- ADMIN --------------->
-    // To load amount in ATM machine
     static void addAmount() {
         for (int i = 0; i < 4; i++) {
             System.out.println("Enter No of " + currency[i] + ": ");
             noOfCurrency[i] += sc.nextInt();
         }
     }
-    // To check ATM machine amount
+
     static void atmBalance() {
         int tot = 0;
         for (int i = 0; i < 4; i++) {
@@ -41,8 +37,7 @@ class ATM {
         System.out.println(total);
     }
 
-    // <---------------- USER --------------->
-    // return remainder amount value
+
     static int remainder(int withDrawAm) {
         for (int j = 3; j >= 0; j--) {
             int n = noOfCurrency[j];
@@ -54,7 +49,7 @@ class ATM {
         }
         return withDrawAm;
     }
-    // To withdraw amount from the ATM machine
+ 
     static void withdraw(int k) {
         System.out.println("Enter Withdraw Amount ");
         System.out.println("Multiples Of ");
@@ -85,11 +80,11 @@ class ATM {
             }
         }
     }
-    // To Check User account Balance
+   
     static void checkBalance(int k) {
         System.out.println("Balance : " + u[k].balance);
     }
-    // To Change User  Account Pin
+   
     static void pinChange(int k) {
         System.out.println("Enter Your Old Pin : ");
         int n = sc.nextInt();
@@ -97,7 +92,7 @@ class ATM {
             u[k].pin=sc.nextInt();
         System.out.println("Your Pin Has Been changed Successfully!");
     }
-    // To deposit amount
+    
     static void deposit(int k) {
 
         for (int i = 0; i < 4; i++) {
@@ -109,7 +104,6 @@ class ATM {
         }
         System.out.println("Amount Deposited Successfully!");
     }
-    // To transfer amount from one account to another account
     static void amountTransfer(int k) {
         System.out.println("Enter Amount Transfer Account Number : ");
         String transferAc = sc.next();
@@ -129,7 +123,7 @@ class ATM {
             }
         } if(pro==0) System.out.println("Check Transfer Account Number");
     }
-    // admin verification and action
+   
     static void admin() {
         System.out.println("----- You Have Chosen Admin Login -----");
         System.out.println("Enter Admin Name and Password");
@@ -165,7 +159,7 @@ class ATM {
             admin();
         }
     }
-    // User actions
+    
     static void userFun(int i){
         int usop = 0;
         do {
@@ -202,7 +196,7 @@ class ATM {
             }
         }while(usop!=6);
     }
-    // user verification
+    
     static void user() {
         System.out.println("----- You Have Chosen User Login -----");
         System.out.println("Enter User Name and Account Pin : ");
